@@ -14,7 +14,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [sortOption, setSortOption] = useState(""); // Sorting state
+  const [sortOption, setSortOption] = useState(""); 
 
   useEffect(() => {
     const uploadedProducts = JSON.parse(localStorage.getItem("products")) || [];
@@ -22,7 +22,7 @@ const Products = () => {
   }, []);
 
   const handleSortChange = (option) => {
-    setSortOption(option); // Save the selected sorting option
+    setSortOption(option); 
   };
 
   const getSortedProducts = (productList) => {
@@ -33,7 +33,7 @@ const Products = () => {
       return productList.sort((a, b) => b.price - a.price);
     }
     if (sortOption === "highRating") {
-      return productList.sort((a, b) => b.rating - a.rating); // Assuming `rating` is a property
+      return productList.sort((a, b) => b.rating - a.rating); 
     }
     return productList;
   };
